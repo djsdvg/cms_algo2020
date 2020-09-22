@@ -1,13 +1,14 @@
-\makeatletter
-\renewcommand{\this@inputfilename}{\texttt{stdin}}
-\renewcommand{\this@outputfilename}{\texttt{stdout}}
-\makeatother
+
+
+\renewcommand{\titolo}{\texttt{Find subsequence}}
+
+\introduzione{}
 
 Una stringa è una sequenza finita di caratteri presi da un qualche alfabeto di riferimento. 
 Ad esempio, $s=GATTA$ è una stringa sull'alfabeto $\{A,C,G,T\}$, come anche sull'alfabeto $\{A,G,T\}$.
 Indichiamo con $len(s)$ il numero di caratteri della stringa~$s$, in questo caso $5$.
 Si noti che la stringa $s$ appare come sottosequenza dentro la stringa $t=TGGTTCAAGTCGTCACA$, 
-cosa che quì preferiamo mettere in evidenza tramite opportuna sottolineatura:\\
+cosa che qui preferiamo mettere in evidenza tramite opportuna sottolineatura:\\
 
 \renewcommand{\arraystretch}{0.2}
 \begin{tabular}{l||c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|}
@@ -47,11 +48,11 @@ Trovi un template della soluzione nel file \textbf{find-subsequence\_template\_s
 dovrai solo risistemare l'implementazione della funzione richiesta che al momento soddisfa 
 alla consegna solo per quelle istanze in cui la prima sequenza passatale non è sottosequenza della seconda.
 
-\InputFile
+\section{InputFile}
 Il vostro programma riceve in input una stringa~$s$ sull'alfabeto $\{A,C,G,T\}$ e, 
 su riga successiva, una stringa~$t$ sempre sullo stesso alfabeto. 
 
-\OutputFile
+\section{OutputFile}
 Restituisci il numero $-1$ se la data stringa $s$ non è sottosequenza della stringa 
 $t$ assegnata, altrimenti restituisci il più piccolo numero naturale $i$ tale che 
 che $s$ è sottosequenza del prefisso $t_i$ dei soli primi $i$ caratteri di $t$.
@@ -63,19 +64,27 @@ cura di modificare solamente l'implementazione delle funzioni richieste. Questo
 è necessario per garantire la compatibilità del vostro programma con il sistema 
 di valutazione, che potrebbe utilizzare una versione di python diversa (quale python2).
 
-\Examples
-\begin{example}
-\exmpfile{find-subsequence.input0.txt}{find-subsequence.output0.txt}%
-\exmpfile{find-subsequence.input1.txt}{find-subsequence.output1.txt}%
-\exmpfile{find-subsequence.input2.txt}{find-subsequence.output2.txt}%
-\end{example}
+\esempio{
+\input{find-subsequence.input0.txt}
+}{\input{find-subsequence.output0.txt}}
 
-\Constraints
+\esempio{
+\input{find-subsequence.input1.txt}
+}{\input{find-subsequence.output1.txt}}
+
+\esempio{
+\input{find-subsequence.input2.txt}
+}{\input{find-subsequence.output2.txt}}
+
+
+
+\sezionetesto{Assunzioni e note}
 \begin{itemize}[nolistsep, noitemsep]
   \item $1\leq len(p) \leq len(t)$
 \end{itemize}
 
-\Scoring
+
+\section*{Subtask}
   \begin{itemize}
     \item \textbf{Subtask 1 [0 punti]:} gli esempi del testo.
     \item \textbf{Subtask 2 [20 punti]:} $len(p) = len(t)$.
